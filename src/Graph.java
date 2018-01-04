@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Graph<T> implements Iterable<T> {
 	protected int E = 0;
-	protected Map<T, HashSet<T>> adjacentMap = new HashMap<>();
+	protected Map<T, Set<T>> adjacentMap = new HashMap<>();
 
 	public Graph() {
 
@@ -78,7 +78,11 @@ public class Graph<T> implements Iterable<T> {
 		}
 	}
 
-	public HashSet<T> adjacent(T v) {
+	public Set<T> vertices() {
+		return adjacentMap.keySet();
+	}
+
+	public Set<T> adjacent(T v) {
 		return this.adjacentMap.get(v);
 	}
 
